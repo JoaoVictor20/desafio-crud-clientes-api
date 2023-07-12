@@ -49,7 +49,7 @@ public class ClienteService {
 	private Date converterDataStringEmDate(String data) throws ParseException {
 
 		if (data != null) {
-			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat formato = new SimpleDateFormat(contantes.getFORMATO_PADRAO_DE_DATA());
 			return formato.parse(data);
 		}
 		return null;
