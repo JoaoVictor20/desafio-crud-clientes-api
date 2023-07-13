@@ -93,9 +93,9 @@ public class ClienteService {
 		}
 	}
 
-	public Cliente deletarCliente(ClienteRequest clienteRequest) throws Exception {
+	public Cliente deletarCliente(Long idDoCliente) throws Exception {
 		try {
-			Cliente cliente = clienteDao.findById(clienteRequest.getId()).get();
+			Cliente cliente = clienteDao.findById(idDoCliente).get();
 			clienteDao.delete(cliente);
 			return null;
 		} catch (Exception exception) {

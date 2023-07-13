@@ -42,21 +42,21 @@ public class ClienteController {
 		}
 	}
 
-	@DeleteMapping(value = "/deletar-cliente")
-	public ResponseEntity<String> deletarCliente(@RequestBody ClienteRequest clienteRequest) {
+	@DeleteMapping(value = "/deletar-cliente/{idCliente}")
+	public ResponseEntity<String> deletarCliente(@PathVariable(value = "idCliente") Long idDoCliente) {
 		try {
-			clienteService.deletarCliente(clienteRequest);
+			clienteService.deletarCliente(idDoCliente);
 			return ResponseEntity.ok(contantes.getSUCESSO_AO_TELETAR_CLIENTE());
 		} catch (Exception exception) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exception.getMessage());
 		}
 	}
 
-	@PostMapping(value = "/buscar-clientes")
-	public ResponseEntity<List<Cliente>> buscarClientesDoUsuario(@RequestBody ClienteRequest clienteRequest) {
+	@GetMapping(value = "/buscar-clientes/{idUsuario}")
+	public ResponseEntity<List<Cliente>> buscarClientesDoUsuario(@PathVariable(value = "idUsuario") Long idDoUsuarioLogado) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK)
-					.body(clienteService.buscarClientesDoUsuario(clienteRequest.getIdUsuario()));
+					.body(clienteService.buscarClientesDoUsuario(idDoUsuarioLogado));
 		} catch (Exception exception) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		}
