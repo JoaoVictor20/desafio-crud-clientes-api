@@ -27,7 +27,7 @@ public class ClienteService {
 	public Cliente cadastrarCliente(ClienteRequest clienteRequest) throws Exception {
 
 		try {
-			if (clienteRequest.getCpf() == null) {
+			if (clienteRequest.getCpf() == "") {
 				Juridica juridica = new Juridica();
 				montarJuridica(clienteRequest, juridica);
 				juridica.setNomeFantasia(clienteRequest.getNomeFantasia());
@@ -48,7 +48,7 @@ public class ClienteService {
 
 	private Date converterDataStringEmDate(String data) throws ParseException {
 
-		if (data != null) {
+		if (data != "") {
 			SimpleDateFormat formato = new SimpleDateFormat(contantes.getFORMATO_PADRAO_DE_DATA());
 			return formato.parse(data);
 		}
