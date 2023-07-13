@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class ClienteRequest {
 
-    private Long idCliente;
+    private Long id;
     private Long idUsuario;
     private String telefone;
     private String nome;

@@ -16,6 +16,8 @@ import java.io.Serializable;
 @PrimaryKeyJoinColumn(name = "id_cliente_juridico")
 public class Juridica extends Cliente implements Serializable, Cloneable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Column(nullable=false)
     private String cnpj;
 	

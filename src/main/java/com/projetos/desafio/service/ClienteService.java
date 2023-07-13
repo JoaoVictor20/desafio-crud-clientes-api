@@ -73,7 +73,7 @@ public class ClienteService {
 
 		try {
 			if (clienteRequest.getCpf() == null) {
-				Juridica juridica = (Juridica) clienteDao.findById(clienteRequest.getIdCliente()).get();
+				Juridica juridica = (Juridica) clienteDao.findById(clienteRequest.getId()).get();
 				juridica.setTelefone(clienteRequest.getTelefone());
 				juridica.setNomeFantasia(clienteRequest.getNomeFantasia());
 				juridica.setRazaoSocial(clienteRequest.getRazaoSocial());
@@ -81,7 +81,7 @@ public class ClienteService {
 				juridica.setDataAlteracao(new Date());
 				return clienteDao.save(juridica);
 			}
-			Fisica fisica = (Fisica) clienteDao.findById(clienteRequest.getIdCliente()).get();
+			Fisica fisica = (Fisica) clienteDao.findById(clienteRequest.getId()).get();
 			fisica.setTelefone(clienteRequest.getTelefone());
 			fisica.setNome(clienteRequest.getNome());
 			fisica.setDataDeNascimento(converterDataStringEmDate(clienteRequest.getDataDeNascimento()));
@@ -95,7 +95,7 @@ public class ClienteService {
 
 	public Cliente deletarCliente(ClienteRequest clienteRequest) throws Exception {
 		try {
-			Cliente cliente = clienteDao.findById(clienteRequest.getIdCliente()).get();
+			Cliente cliente = clienteDao.findById(clienteRequest.getId()).get();
 			clienteDao.delete(cliente);
 			return null;
 		} catch (Exception exception) {

@@ -52,7 +52,7 @@ public class ClienteController {
 		}
 	}
 
-	@GetMapping(value = "/buscar-clientes")
+	@PostMapping(value = "/buscar-clientes")
 	public ResponseEntity<List<Cliente>> buscarClientesDoUsuario(@RequestBody ClienteRequest clienteRequest) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK)

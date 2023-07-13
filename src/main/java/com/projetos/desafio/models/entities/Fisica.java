@@ -19,6 +19,8 @@ import java.util.Date;
 @PrimaryKeyJoinColumn(name = "id_cliente_fisico")
 public class Fisica extends Cliente implements Serializable, Cloneable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Temporal(TemporalType.DATE)
     private Date dataDeNascimento;
 	
