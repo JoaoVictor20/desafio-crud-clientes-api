@@ -72,7 +72,7 @@ public class ClienteService {
 	public Cliente alterarCliente(ClienteRequest clienteRequest) throws Exception {
 
 		try {
-			if (clienteRequest.getCpf() == null) {
+			if (clienteRequest.getCpf() == "") {
 				Juridica juridica = (Juridica) clienteDao.findById(clienteRequest.getId()).get();
 				juridica.setTelefone(clienteRequest.getTelefone());
 				juridica.setNomeFantasia(clienteRequest.getNomeFantasia());
