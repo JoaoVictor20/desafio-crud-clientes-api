@@ -17,4 +17,8 @@ API criado com Spring boot, Java e ferramentas web.
 <br>
 
 ## 📚 Contexto
-Projeto Java Spring com intuito de realizar um crud de clientes e a autenticação de usuários logados.
+Projeto Java Spring com intuito de realizar um crud de clientes apenas para usuários permitidos via Login e Senha
+
+## 📚 Usuário de testes para realizar o Login:
+login: JOAO
+senha: 123
